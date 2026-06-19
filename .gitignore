@@ -10,8 +10,5 @@ __pycache__/
 # Vector Database
 chroma_db/
 
-# Data files (PDF, video, transcripts)
-data/
-
 # OS
 .DS_Store
