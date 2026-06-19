@@ -56,8 +56,52 @@ uv venv
 source .venv/bin/activate
 uv pip install -r requirements.txt
 ```
+---
+
+### Automated setup script
+
+This repository includes `setup_project.sh` — a production-grade initialization script that automates creating a virtual environment, populating the project folder structure, and installing dependencies via `uv`.
+
+- **Purpose:** Bootstraps the workspace by creating `.venv`, writing `requirements.txt`, and generating basic `src/`, `data/`, and `chroma_db/` folders and placeholder files.
+- **Prerequisites:** Ensure `uv` is installed and available on your `PATH` (see https://github.com/astral-sh/uv).
+- **Usage:**
+```bash
+# Make executable (optional) and run from repository root
+chmod +x setup_project.sh
+./setup_project.sh
+
+# Or run explicitly with bash
+bash setup_project.sh
+```
+- **Notes / Warnings:**
+   - Run the script from the project root. If a `kt-rag-project` subdirectory exists, the script may `cd` into it.
+   - The script will create or overwrite files such as `requirements.txt`, `README.md`, `Dockerfile`, and `docker-compose.yml`, and touch several `src/` files. Review the script before running on an existing project.
+   - After the script completes the virtual environment will be activated and `uv` will have synchronized the dependencies listed in `requirements.txt`.
 
 ---
+
+### PowerShell setup script
+
+A Windows/PowerShell-friendly equivalent is provided as `setup_project.ps1`.
+
+- **Purpose:** Same bootstrap actions as `setup_project.sh`, but implemented for PowerShell and PowerShell Core.
+- **Prerequisites:** PowerShell (Windows PowerShell or PowerShell Core) and `uv` available in `PATH`.
+- **Usage (Windows PowerShell):**
+```powershell
+# From repository root
+.\setup_project.ps1
+```
+- **Usage (PowerShell Core on macOS/Linux):**
+```bash
+# Run PowerShell Core then execute the script
+pwsh ./setup_project.ps1
+```
+
+### Which script to use
+
+- **`setup_project.sh`**: Recommended for POSIX environments — Linux, macOS, and Git Bash / MSYS on Windows.
+- **`setup_project.ps1`**: Recommended for Windows PowerShell and PowerShell Core (cross-platform) users.
+
 
 ## How to Run the App
 
