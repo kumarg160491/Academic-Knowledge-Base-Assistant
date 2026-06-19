@@ -1,0 +1,17 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+.venv/
+
+# Environment
+.env
+
+# Vector Database
+chroma_db/
+
+# Data files (PDF, video, transcripts)
+data/
+
+# OS
+.DS_Store
