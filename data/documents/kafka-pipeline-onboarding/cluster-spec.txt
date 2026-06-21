@@ -1,5 +1,0 @@
-CLUSTER CONFIGURATION SPECIFICATION:
-- Production Environment Broker Nodes: broker-1.prod, broker-2.prod, broker-3.prod
-- Target Ingestion Topics: transactions.incoming, transactions.deadletter
-- Message Persistence window constraint: 7 Days
-- Primary Consumer Group ID designation: order-processing-worker-v1

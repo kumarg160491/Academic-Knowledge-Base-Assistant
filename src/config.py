@@ -5,7 +5,7 @@ from dataclasses import dataclass, field
 
 @dataclass(frozen=True)
 class OllamaConfig:
-    base_url   : str   = "http://localhost:11434"
+    base_url   : str   = "http://ollama:11434"
     model      : str   = "llama3.2"
     embedding  : str   = "nomic-embed-text"
     temperature: float = 0.1
